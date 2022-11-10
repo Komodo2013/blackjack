@@ -37,21 +37,29 @@ public class blackjackcard extends PCard {
 
     @Override
     public void hideCard() {
-
+        this.hidden = true;
     }
 
     @Override
     public void showCard() {
-
+        this.hidden = false;
     }
 
     @Override
     public boolean isHidden() {
-        return false;
+        return this.hidden;
     }
 
     @Override
     public String getText() {
+        String text = "";
+//        switch (rank){
+//            case Face.ACE.value:
+//                return text = text + "A";
+//                break;
+//
+//
+//        }
         return null;
     }
 }
