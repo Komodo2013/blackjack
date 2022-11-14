@@ -11,10 +11,10 @@ public enum Face {
     EIGHT(8, "8"),
     NINE(9, "9"),
     TEN(10, "10"),
-    JACK(11, "Jack"),
-    KNIGHT(12, "Knight"),
-    QUEEN(13, "Queen"),
-    KING(14, "King");
+    JACK(11, "J"),
+    KNIGHT(12, "Kn"),
+    QUEEN(13, "Q"),
+    KING(14, "K");
     public final int value;
     public final String name;
 

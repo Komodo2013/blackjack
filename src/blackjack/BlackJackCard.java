@@ -76,7 +76,7 @@ public class BlackJackCard extends PCard {
 
     @Override
     public String getText() {
-        return rank.name + " of " + suit.name;
+        return rank.name + suit.name;
     }
 
     @Override
