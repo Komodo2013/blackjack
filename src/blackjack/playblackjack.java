@@ -1,3 +1,15 @@
+/*
+ *File:lab 9a
+ * Description: Black Jack setup
+ * working with other's code
+ * Lessons Learned:
+ *   Other objects
+ * Instructor's Name: Barbara Chamberlin
+ *
+ * @author: Miguel Espinoza, Jacob Larsen
+ * since: 014 Nov 2022
+ */
+
 package src.blackjack;
 
 import src.blackjacktest.CardTest;
