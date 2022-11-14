@@ -1,6 +1,6 @@
-package blackjacktest;
+package src.blackjacktest;
 
-import blackjackbase.PCard;
+import src.blackjackbase.PCard;
 
 import java.awt.Color;
 import java.awt.Dimension;
