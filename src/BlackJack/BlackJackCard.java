@@ -1,13 +1,13 @@
 /*
- *File:lab 9a
- * Description: Black Jack setup
- * working with other's code
+ *File:lab 9b
+ * Description: Black Jack deck
+ * Creating and shuffling deck
  * Lessons Learned:
- *   Other objects
+ *   Shuffle
  * Instructor's Name: Barbara Chamberlin
  *
  * @author: Miguel Espinoza, Jacob Larsen
- * since: 014 Nov 2022
+ * since: 14 Nov 2022
  */
 
 package src.BlackJack;
@@ -17,11 +17,11 @@ import src.BlackJackBase.PCard;
 import java.awt.*;
 
 public class BlackJackCard extends PCard {
-    private  Color BACKGROUND = new Color(237, 230, 220);
+    private Color BACKGROUND = new Color(237, 230, 220);
 
     private Face rank;
     private Suit suit;
-    private boolean hidden;
+    private boolean hidden = false;
 
     public BlackJackCard(Face rank, Suit suit) {
         super();
@@ -48,16 +48,16 @@ public class BlackJackCard extends PCard {
 
     // Setters
     public void setRank(int rank) {
-        for(Face f : Face.values()){
-            if(f.value == rank) {
+        for (Face f : Face.values()) {
+            if (f.value == rank) {
                 this.rank = f;
             }
         }
     }
 
     public void setSuit(int suit) {
-        for(Suit s : Suit.values()){
-            if(s.value == suit) {
+        for (Suit s : Suit.values()) {
+            if (s.value == suit) {
                 this.suit = s;
             }
         }
@@ -71,14 +71,15 @@ public class BlackJackCard extends PCard {
         this.suit = suit;
     }
 
+
     @Override
     public void hideCard() {
-
+        hidden = true;
     }
 
     @Override
     public void showCard() {
-
+        hidden = false;
     }
 
     @Override

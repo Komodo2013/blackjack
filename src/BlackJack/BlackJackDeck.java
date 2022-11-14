@@ -1,11 +1,21 @@
+/*
+ *File:lab 9b
+ * Description: Black Jack deck
+ * Creating and shuffling deck
+ * Lessons Learned:
+ *   Shuffle
+ * Instructor's Name: Barbara Chamberlin
+ *
+ * @author: Miguel Espinoza, Jacob Larsen
+ * since: 14 Nov 2022
+ */
+
 package src.BlackJack;
 
 import src.BlackJackBase.PCard;
 import src.BlackJackBase.PDeck;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class BlackJackDeck implements PDeck {
 
@@ -26,10 +36,7 @@ public class BlackJackDeck implements PDeck {
 
     @Override
     public void shuffle() {
-        ArrayList<Double> rand = new ArrayList<>();
-        for(int i = 0; i < cards.size(); i++){
-            rand.add(Math.random());
-        }
+        Collections.shuffle(cards);
     }
 
     @Override

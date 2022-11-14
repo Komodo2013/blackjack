@@ -1,15 +1,13 @@
-/**
- * File: BJCardTest.java
- * Description: Creating a Test file for the BJCard
- * Lessons Learned: In this lesson I learned how test and use the methods of the class
- * public void getRank() {
- *         BlackJackCard card = new BlackJackCard(Face.ACE, Suit.DIAMOND);
- *         assertEquals(card.getRank(), 1);
- *     }
+/*
+ *File:lab 9b
+ * Description: Black Jack deck
+ * Creating and shuffling deck
+ * Lessons Learned:
+ *   Shuffle
  * Instructor's Name: Barbara Chamberlin
  *
- * @author: Miguel Espinoza, Jacob Larsen.
- * @since: 11/14/2022.
+ * @author: Miguel Espinoza, Jacob Larsen
+ * since: 14 Nov 2022
  */
 
 

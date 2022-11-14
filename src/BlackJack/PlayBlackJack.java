@@ -1,13 +1,13 @@
 /*
- *File:lab 9a
- * Description: Black Jack setup
- * working with other's code
+ *File:lab 9b
+ * Description: Black Jack deck
+ * Creating and shuffling deck
  * Lessons Learned:
- *   Other objects
+ *   Shuffle
  * Instructor's Name: Barbara Chamberlin
  *
  * @author: Miguel Espinoza, Jacob Larsen
- * since: 014 Nov 2022
+ * since: 14 Nov 2022
  */
 
 package src.BlackJack;
@@ -22,6 +22,8 @@ public class PlayBlackJack {
 
         //DeckTest.run();
 
-        DeckTest.run(new BlackJackDeck());
+        BlackJackDeck deck = new BlackJackDeck();
+        deck.shuffle();
+        DeckTest.run(deck);
     }
 }
