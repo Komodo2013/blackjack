@@ -1,4 +1,4 @@
-package src.blackjacktest;
+package src.BlackJackTest;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,8 +13,8 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import BlackJackBase.PCard;
-import BlackJackBase.PDeck;
+import src.BlackJackBase.PDeck;
+import src.BlackJackBase.PCard;
 
 /**
  * A simple playing card deck test. This test will create a window and display

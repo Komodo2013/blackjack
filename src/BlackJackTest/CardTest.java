@@ -1,4 +1,4 @@
-package src.blackjacktest;
+package src.BlackJackTest;
 
 import src.BlackJackBase.PCard;
 

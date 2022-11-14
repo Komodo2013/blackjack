@@ -12,7 +12,7 @@
 
 package src.blackjack;
 
-import src.blackjacktest.CardTest;
+import src.BlackJackTest.CardTest;
 
 public class playblackjack {
     public static void main(String[] args) {
