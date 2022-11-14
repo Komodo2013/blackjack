@@ -14,6 +14,6 @@ public enum Suit {
     private Suit(int v, Color c, String n) {
         this.value = v;
         this.color = c;
-        this.name = n; // Python is superior
+        this.name = n; // Python is superior //agree
     }
 }
