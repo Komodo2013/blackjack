@@ -1,4 +1,4 @@
-package src.blackjackbase;
+package src.BlackJackBase;
 
 import java.awt.Color;
 

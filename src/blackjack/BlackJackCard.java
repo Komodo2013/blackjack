@@ -12,7 +12,7 @@
 
 package src.blackjack;
 
-import src.blackjackbase.PCard;
+import src.BlackJackBase.PCard;
 
 import java.awt.*;
 
