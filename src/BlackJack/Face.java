@@ -10,7 +10,7 @@
  * since: 014 Nov 2022
  */
 
-package src.blackjack;
+package src.BlackJack;
 
 public enum Face {
     ACE(1, "1"),

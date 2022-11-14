@@ -10,11 +10,11 @@
  * since: 014 Nov 2022
  */
 
-package src.blackjack;
+package src.BlackJack;
 
 import src.BlackJackTest.CardTest;
 
-public class playblackjack {
+public class PlayBlackJack {
     public static void main(String[] args) {
         CardTest.run(new BlackJackCard(Face.ACE, Suit.CLUB));
     }
