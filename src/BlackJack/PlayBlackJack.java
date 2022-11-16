@@ -18,12 +18,10 @@ import src.BlackJackTest.DeckTest;
 
 public class PlayBlackJack {
     public static void main(String[] args) {
-        // CardTest.run(new BlackJackCard(Face.ACE, Suit.CLUB));
+         //CardTest.run(new BlackJackCard(Face.ACE, Suit.SPADE));
 
-        //DeckTest.run();
-
-        BlackJackDeck deck = new BlackJackDeck();
-        deck.shuffle();
-        DeckTest.run(deck);
+//        BlackJackDeck deck = new BlackJackDeck();
+//        deck.shuffle();
+//        DeckTest.run(deck);
     }
 }
