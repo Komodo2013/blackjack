@@ -104,11 +104,16 @@ public class BlackJackCard extends PCard {
 
     @Override
     public Color getBackColor() {
-        return BACKGROUND;
+        return new Color(145, 145, 194);
     }
 
     @Override
     public Color getBorderColor() {
-        return suit.color;
+        return new Color(33, 43, 168);
+    }
+
+    @Override
+    public Color getStripeColor() {
+        return new Color(33, 43, 168);
     }
 }
