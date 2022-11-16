@@ -13,9 +13,9 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import src.BlackJackBase.PCard;
-import src.BlackJackBase.PDeck;
-import src.BlackJackBase.PHand;
+import BlackJackBase.PCard;
+import BlackJackBase.PDeck;
+import BlackJackBase.PHand;
 
 /**
  * A simple playing card hand test. This test will attempt a number of hand

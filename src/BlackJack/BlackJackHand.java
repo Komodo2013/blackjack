@@ -34,9 +34,11 @@ public class BlackJackHand implements PHand {
 
     @Override
     public int getValue() {
-//        for (BlackJackCard cards : hand){
-//            System.out.println(cards.getRank());
-//        }
+        //for (BlackJackCard cards : hand){
+        //  System.out.println(cards.getRank());
+        //}
         return 0;
     }
 }
+
+
