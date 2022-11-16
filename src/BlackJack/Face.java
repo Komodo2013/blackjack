@@ -1,19 +1,19 @@
 /*
- *File:lab 9a
- * Description: Black Jack setup
+ *File:lab 10a
+ * Description: Black Jack hand
  * working with other's code
  * Lessons Learned:
  *   Other objects
  * Instructor's Name: Barbara Chamberlin
  *
  * @author: Miguel Espinoza, Jacob Larsen
- * since: 014 Nov 2022
+ * since: 16 Nov 2022
  */
 
 package src.BlackJack;
 
 public enum Face {
-    ACE(1, "1"),
+    ACE(1, "A"),
     TWO(2, "2"),
     THREE(3, "3"),
     FOUR(4, "4"),

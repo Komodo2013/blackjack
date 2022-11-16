@@ -66,20 +66,20 @@ public class HandTest extends JPanel {
 			do {
 				if (this.hand.getSize() > i)
 					this.deck.addCard(this.hand.removeCard(i));
-				deck.shuffle();
+				this.deck.shuffle();
 				this.hand.addCard(this.deck.dealCard());
 			} while (this.hand.getValue() != 11 + i);
 		for (int i = 4; i < 6; i++)
 			do {
 				if (this.hand.getSize() > i)
 					this.deck.addCard(this.hand.removeCard(i));
-				deck.shuffle();
+				this.deck.shuffle();
 				this.hand.addCard(this.deck.dealCard());
 			} while (this.hand.getValue() != 14 + (i - 3) * 2);
 		do {
 			if (this.hand.getSize() > 6)
 				this.deck.addCard(this.hand.removeCard(6));
-			deck.shuffle();
+			this.deck.shuffle();
 			this.hand.addCard(this.deck.dealCard());
 		} while (this.hand.getValue() != 21);
 	}
