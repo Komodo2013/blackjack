@@ -22,13 +22,6 @@ import java.awt.*;
 
 /* TODO:
     Dealer’s first card is hidden unless there is a Black Jack on the initial deal. (4 points)
-    Game’s banner color is not white. (2 points)
-    Game’s banner text color is not green. (2 points)
-    Game’s status text color is not green. (2 points)
-    Game’s button color is not blue. (2 points)
-    Game’s button highlight color is not cyan. (2 points)
-    Game’s button text color is not green. (2 points)
-    Game’s font is not Sans Serif. (2 points)
  */
 
 public class PlayBlackJack {
@@ -46,13 +39,18 @@ public class PlayBlackJack {
         deck1.shuffle();
         HandTest.run(deck1,hand);*/
 
+        PGame.setBackgroundColor(new Color(0, 138, 47));
+        PGame.setBannerColor(new Color(64, 64, 64));
+        PGame.setBannerTextColor(new Color(252, 252, 252));
+        PGame.setButtonColor(new Color(192, 192, 192));
+        PGame.setButtonTextColor(new Color(2, 2, 2));
+        PGame.setButtonHighlightColor(new Color(253, 0, 8));
+        PGame.setFont("Times New Roman");
+
         BlackJackDeck deck2 = new BlackJackDeck();
-        deck2.shuffle();
-
-
-        PGame.setBackgroundColor(new Color(21, 98, 4));
 
         BlackJackHand Dealer = new BlackJackHand();
+        //Dealer.getCard(0).hideCard();
         BlackJackHand Player = new BlackJackHand();
 
         PGame.run(deck2, Dealer, Player);

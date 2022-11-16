@@ -84,7 +84,7 @@ public class BlackJackCard extends PCard {
 
     @Override
     public boolean isHidden() {
-        return false;
+        return hidden;
     }
 
     @Override
