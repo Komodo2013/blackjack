@@ -13,9 +13,9 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import BlackJackBase.PCard;
-import BlackJackBase.PDeck;
-import BlackJackBase.PHand;
+import src.BlackJackBase.PCard;
+import src.BlackJackBase.PDeck;
+import src.BlackJackBase.PHand;
 
 /**
  * A simple playing card hand test. This test will attempt a number of hand
@@ -33,7 +33,7 @@ public class HandTest extends JPanel {
 	/**
 	 * Display a deck of cards in a window.
 	 * 
-	 * @param card
+	 * @param deck
 	 *            The deck of cards to display.
 	 */
 	public static void run(PDeck deck, PHand hand) {

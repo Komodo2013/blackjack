@@ -19,13 +19,17 @@ import src.BlackJackTest.HandTest;
 
 public class PlayBlackJack {
     public static void main(String[] args) {
-//        CardTest.run(new BlackJackCard(Face.ACE, Suit.SPADE));
+        /*
+        CardTest.run(new BlackJackCard(Face.ACE, Suit.SPADE));
+        BlackJackDeck deck = new BlackJackDeck();
+        deck.shuffle();
+        DeckTest.run(deck);
+        BlackJackHand hand = new BlackJackHand();
+        BlackJackDeck deck = new BlackJackDeck();
+        HandTest.run(deck,hand);
+        */
 
-//        BlackJackDeck deck = new BlackJackDeck();
-//        deck.shuffle();
-//        DeckTest.run(deck);
-//        BlackJackHand hand = new BlackJackHand();
-//        BlackJackDeck deck = new BlackJackDeck();
-//        HandTest.run(deck,hand);
+
+
     }
 }
