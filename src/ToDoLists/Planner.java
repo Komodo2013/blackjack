@@ -234,7 +234,7 @@ public class Planner {
 			String shoppingType = sIn.nextLine();		
 			ShoppingPlan shoppingPlan = new ShoppingPlan(planTitle, shoppingType);
 			plans.add(shoppingPlan);
-			System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",shoppingPlan);		
+			System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",shoppingPlan.getTitle());
 		}//end of(type.equalsIgnoreCase("Packing"))		
 	}//end of method addPlan
 	
