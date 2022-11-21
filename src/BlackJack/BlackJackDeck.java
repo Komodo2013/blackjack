@@ -1,13 +1,13 @@
 /*
- *File:lab 9b
- * Description: Black Jack deck
- * Creating and shuffling deck
+ *File:lab 10b
+ * Description: Black Jack hand
+ * working with other's code
  * Lessons Learned:
- *   Shuffle
+ *   Colors
  * Instructor's Name: Barbara Chamberlin
  *
  * @author: Miguel Espinoza, Jacob Larsen
- * since: 14 Nov 2022
+ * since: 16 Nov 2022
  */
 
 package src.BlackJack;

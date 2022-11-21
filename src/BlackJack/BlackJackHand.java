@@ -1,9 +1,9 @@
 /*
- *File:lab 10a
+ *File:lab 10b
  * Description: Black Jack hand
  * working with other's code
  * Lessons Learned:
- *   Other objects
+ *   Colors
  * Instructor's Name: Barbara Chamberlin
  *
  * @author: Miguel Espinoza, Jacob Larsen
