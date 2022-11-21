@@ -115,6 +115,7 @@ public class Planner {
 		p2.add("Water Bottle", 7);
 		p2.add("Shoe Inserts", 4);
 		p2.add("Snacks", 24);
+		plans.add(p2);
 		
 		ShoppingPlan s2 = new ShoppingPlan("Home Depot", "Home Improvement");
 		s2.add("1 1/2 in. Screws", 100);
@@ -133,8 +134,7 @@ public class Planner {
 		s3.add("Styrofoam", 6);
 		s3.add("Glue", 2);
 		plans.add(s3);
-		
-		plans.add(p2);
+
 		PackingPlan p3 = new PackingPlan("April Quarterly Reviews", "Chicago", 1, "Business");
 		p3.add("Suit Coat", 1);
 		p3.add("Tie", 2);
@@ -173,7 +173,7 @@ public class Planner {
 			System.out.println(selectedPlan);	//Calls the toString() method for the plan which prints out Plan details in a readable form.
 		}// end of while(!done)	
 	}//end of method viewModule
-	
+
 	/**
 	 * Returns void.
 	 * Provides the user with a sub-menu which allows them to choose to create a Packing Plan or a Shopping Plan.
@@ -182,7 +182,7 @@ public class Planner {
 	 * @param	sIn	A Scanner object used to get user input.
 	 * @return		void
 	 */		
-	public static void createModule(Scanner sIn) {
+	public static void  createModule(Scanner sIn) {
 		String choice;			//The user's choice returned from getCommand().
 		boolean done = false;	//while loop control.
 		
@@ -195,7 +195,7 @@ public class Planner {
 			switch (choice) {
 				case "1":			
 					addPlan(sIn, "Packing");
-					//break;
+					break;
 				case "2":			
 					addPlan(sIn, "Shopping");
 					break;
@@ -226,7 +226,7 @@ public class Planner {
 			System.out.print("Please enter the type of trip being planned: ");
 			String tripType = sIn.nextLine();			
 			int travelers = getValidInt(sIn, "Please enter the number of travelers for this trip: ", "Invalid entry.  Number of travelers must be a whole number.");
-			PackingPlan packingPlan = new PackingPlan(planTitle, tripType, travelers, destination);
+			PackingPlan packingPlan = new PackingPlan(planTitle, destination, travelers, tripType);
 			plans.add(packingPlan);
 			System.out.printf("\nThe '%s' Packing Plan has been created and is ready for update.\n",packingPlan.getTitle());
 		} else if(planType.equalsIgnoreCase("Shopping")) {
@@ -350,12 +350,13 @@ public class Planner {
 	public static void deleteItem(Scanner sIn, ToDo plan) {
 		//Get the list of items (keys) from the plan HashMap and convert the Set<String> to an array String[].
 		Set<String> itemList = plan.getItems();		//Get the Set<String> of keys from the HashMap.
-		int setSize = itemList.size()-1;			//Find the number of items in the HashMap.
+		int setSize = itemList.size();			//Find the number of items in the HashMap.
 		String[] choices = new String[setSize];		//Create a new array String[] that is the same size as the HashMap.
 		
 		int index = 0;								//Load the new String[] array with the items (keys) from the HashMap.
 		for(String item : itemList) {
-			choices[index++] = item;
+			choices[index] = item;
+			index++;
 		}//end of for(String item : itemList)
 		
 		String item = getValidString(sIn, "Which item would you like to delete?: ", "\nInvalid entery.  That is not an item in the plan.", choices );

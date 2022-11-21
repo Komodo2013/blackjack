@@ -149,7 +149,7 @@ public class ShoppingPlan extends ToDo {
 	 */	
 	public void change(String item, int change) {
 		int current = items.get(item);
-		items.put(item, current + change);
+		items.put(item, Math.max(current + change, 0));
 	}//end of method change(String, int)
 
 	/**

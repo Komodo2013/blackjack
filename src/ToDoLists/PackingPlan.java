@@ -195,7 +195,7 @@ public class PackingPlan extends ToDo {
 	 */	
 	public void change(String item, int change) {
 		int current = gear.get(item);
-		gear.put(item, current + change);
+		gear.put(item, Math.max(current + change, 0));
 	}//end of method change(String, int)
 	
 	/**

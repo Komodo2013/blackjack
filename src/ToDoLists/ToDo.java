@@ -22,7 +22,7 @@ public abstract class ToDo implements Modifiable{
 	//Attributes
 	private String title;				//Title of the ToDo plan
 	private int toDoID;					//ID of the ToDo plan
-	private static int nextToDoID=1;	//Holds the next ID for the class.
+	public static int nextToDoID=1;	//Holds the next ID for the class.
 	
 	
 	//Constructors
@@ -37,7 +37,7 @@ public abstract class ToDo implements Modifiable{
 	public ToDo() {
 		title = "";
 		toDoID = nextToDoID;
-		nextToDoID = 1;
+		nextToDoID += 1;
 	}//end of constructor ToDo()
 
 	/**
@@ -50,7 +50,7 @@ public abstract class ToDo implements Modifiable{
 	public ToDo(String t) {
 		title = t;
 		toDoID = nextToDoID;
-		nextToDoID = toDoID + nextToDoID;
+		nextToDoID += 1;
 	}//end of constructor ToDo(String)	
 	
 	
