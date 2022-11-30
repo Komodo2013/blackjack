@@ -47,26 +47,47 @@ public class DrawPanel extends JPanel {
 
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
 
-		g2.setColor(Color.RED);
-		g2.setStroke(new BasicStroke(1));
-		g2.drawRect(50, 50, 200, 100);
-		g2.fillRect(300, 50, 100, 200);
+        g2.setColor(Color.GRAY);
+        g2.setStroke(new BasicStroke(2));
+        g2.drawRect(50, 50, 200, 100);
+        g2.fillRect(300, 50, 100, 200);
 
-		/*
-		 * Use this section to write your code.
-		 * DrawShapes
-		 * Draw at least 6 shapes in BOTH draw and fill formats using methods found in the Graphics class and/or the Graphics2D class.
-		 * In other words, if you draw an empty rectangle, you should also draw a filled rectangle.  That counts as one (1) shape.
-		 * The empty and filled versions of the shape should be at different orientations.
-		 * One of the shapes MUST be a triangle.
-		 * Each shape should be a different color.  An empty and a filled rectangle may be the same color, but they must be a different color from an empty and filled triangle.
-		 * At least one of the colors should NOT be a standard color from the COLOR palette.
-		 * Each empty shape should have a different stroke size.
-		 * Be sure all shapes are located such that they can all be seen.
-		 */
-		
+        g2.setColor(Color.BLUE);
+        g2.setStroke(new BasicStroke(3));
+        int[] xPoints1 = {500, 600, 600}; //Define the x cords for each point
+        int[] yPoints1 = {250, 50, 250}; //Define the y cords for each point
+        g2.drawPolygon(xPoints1, yPoints1, 3);
+        g2.fillPolygon(new int[]{700, 750, 800}, new int[]{50, 250, 50}, 3);
 
-		
-	}//end of method paintComponent(Graphics)
+        g2.setColor(Color.GREEN);
+        g2.setStroke(new BasicStroke(1));
+        g2.drawPolygon(new int[]{900, 950, 1050, 1000}, new int[]{50, 250, 250, 50}, 4);
+        g2.fillPolygon(new int[]{1100, 1150, 1250, 1200}, new int[]{50, 250, 250, 50}, 4);
+
+
+        g2.setColor(Color.RED);
+        g2.setStroke(new BasicStroke(4));
+        g2.drawPolygon(new int[]{50, 100, 200, 250, 200, 100}, new int[]{400, 450, 450, 400, 350, 350}, 6);
+        g2.fillPolygon(new int[]{60, 100, 200, 240, 200, 100}, new int[]{400, 440, 440, 400, 360, 360}, 6);
+
+        /*
+        g2.setColor(Color.CYAN);
+        g2.setStroke(new BasicStroke(5));
+
+         */
+
+        g2.setColor(Color.YELLOW);
+        g2.setStroke(new BasicStroke(6));
+        g2.drawPolygon(new int[]{600, 650, 450, 500, 550}, new int[]{350, 450, 550, 650, 750}, 5);
+        g2.fillPolygon(new int[]{350, 450, 550, 600, 650}, new int[]{150, 250, 350, 350, 360}, 5);
+
+        /*
+         * Draw at least 6 shapes in BOTH draw and fill formats using methods found in the Graphics class and/or the Graphics2D class.
+         * At least one of the colors should NOT be a standard color from the COLOR palette.
+         * Be sure all shapes are located such that they can all be seen.
+         */
+
+
+    }//end of method paintComponent(Graphics)
 
 }//end of class DrawPanel
