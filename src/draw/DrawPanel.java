@@ -70,16 +70,18 @@ public class DrawPanel extends JPanel {
         g2.drawPolygon(new int[]{50, 100, 200, 250, 200, 100}, new int[]{400, 450, 450, 400, 350, 350}, 6);
         g2.fillPolygon(new int[]{60, 100, 200, 240, 200, 100}, new int[]{400, 440, 440, 400, 360, 360}, 6);
 
-        /*
-        g2.setColor(Color.CYAN);
-        g2.setStroke(new BasicStroke(5));
-
-         */
+        //pentagon
 
         g2.setColor(Color.YELLOW);
         g2.setStroke(new BasicStroke(6));
-        g2.drawPolygon(new int[]{600, 650, 450, 500, 550}, new int[]{350, 450, 550, 650, 750}, 5);
-        g2.fillPolygon(new int[]{350, 450, 550, 600, 650}, new int[]{150, 250, 350, 350, 360}, 5);
+        g2.drawPolygon(new int[]{300, 350, 400, 370, 330}, new int[]{400, 350, 400, 450, 450}, 5);
+        g2.fillPolygon(new int[]{500, 550, 600, 570, 530}, new int[]{400, 350, 400, 450, 450}, 5);
+
+        //circle
+        g2.setColor(Color.CYAN);
+        g2.setStroke(new BasicStroke(5));
+        g2.drawOval(700,350,100,100);
+        g2.fillOval(900,350,100,100);
 
         /*
          * Draw at least 6 shapes in BOTH draw and fill formats using methods found in the Graphics class and/or the Graphics2D class.
