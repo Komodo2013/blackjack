@@ -19,6 +19,8 @@ import java.awt.geom.*;
  * @Minor modifications by Jeff Light
  * @since 2019-11-26
  * @since 2019-12-01
+ *  * @Minor modifications by Miguel and Jacob
+ *  * @since 2019-11-26
  */
 public class DrawPanel extends JPanel {
     //Attributes
