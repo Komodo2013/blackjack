@@ -13,39 +13,39 @@ import java.awt.geom.*;
 
 /**
  * Class used to create a DrawPanel where shapes will be drawn by the programmer (via code).
- * 
+ *
  * @author Jared N. Plumb
  * @version 1.0
- * @since 2019-11-26
  * @Minor modifications by Jeff Light
+ * @since 2019-11-26
  * @since 2019-12-01
  */
 public class DrawPanel extends JPanel {
-	//Attributes
-	private static final long serialVersionUID = 6311020027600344213L;
+    //Attributes
+    private static final long serialVersionUID = 6311020027600344213L;
 
-	public DrawPanel() {
-		this.setPreferredSize(new Dimension(1600, 900));	//Sets the dimensions of the DrawPanel.  Change this if your screen doesn't support this size.
-		this.setOpaque(true);
-		this.setBackground(Color.WHITE);			//Sets the background of the DrawPanel LIGHT_GRAY.  You may change this if desired.
-	}
-	
-	
-	/**
-	 * Overrides the JComponent.paintComponent method.
-	 * EVERYTHING that gets drawn to the Component (which sits on the content frame of the JFrame) is drawn in this method.
-	 * Draw12a
-	 * Draw all your objects in the paintComponent method.
-	 * Automatically called by the event handler whenever the screen needs to be redrawn.
-	 * DO NOT CALL THIS METHOD MANUALLY
-	 * 
-	 * @param	g	//All drawing in Java must go through a Graphics object
-	 */
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;			//Allows us to draw using both the Graphics class methods and the Graphics2D class methods
+    public DrawPanel() {
+        this.setPreferredSize(new Dimension(1600, 900));    //Sets the dimensions of the DrawPanel.  Change this if your screen doesn't support this size.
+        this.setOpaque(true);
+        this.setBackground(Color.WHITE);            //Sets the background of the DrawPanel LIGHT_GRAY.  You may change this if desired.
+    }
 
-		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
+
+    /**
+     * Overrides the JComponent.paintComponent method.
+     * EVERYTHING that gets drawn to the Component (which sits on the content frame of the JFrame) is drawn in this method.
+     * Draw12a
+     * Draw all your objects in the paintComponent method.
+     * Automatically called by the event handler whenever the screen needs to be redrawn.
+     * DO NOT CALL THIS METHOD MANUALLY
+     *
+     * @param    g    //All drawing in Java must go through a Graphics object
+     */
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;            //Allows us to draw using both the Graphics class methods and the Graphics2D class methods
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);    //Makes drawn shapes and fonts clearer
 
         g2.setColor(Color.GRAY);
         g2.setStroke(new BasicStroke(2));
