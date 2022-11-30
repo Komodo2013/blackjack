@@ -98,8 +98,14 @@ public class DrawPanel extends JPanel {
 		
 		
 		//Populate the scene with your own trees here!
-		
-		
+
+		Tree t4 = new Tree(g2, 500, 475, 2, 6, BROWN , DARK_GREEN);
+		t4.draw();
+		Tree t5 = new Tree(g2, 1200, 650, 3, 7, BROWN , GREEN);
+		t5.draw();
+		Tree t6 = new Tree(g2, 125, 650, 1.3, 4, BROWN , FOREST_GREEN);
+		t6.draw();
+
 	}//end of method paintComponent(Graphics)
 
 }//end of class DrawPanel

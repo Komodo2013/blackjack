@@ -65,9 +65,9 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 	 * @return	void. 
 	 */
 	public void draw() {
-		//applyScale();
-		//drawTrunk();
-		//drawBranches();
+		applyScale();
+		drawTrunk();
+		drawBranches();
 	}//end of method draw()
 	
 	/**
@@ -88,6 +88,7 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 	 */
 	private void drawTrunk() {
 	}//end of method drawTrunk()
+
 	/**
 	 * drawBranches()
 	 * Draws 'level' number of triangles above the trunk overlapped by 'branchOverlap'.
@@ -96,5 +97,22 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 	 * @return	void. 
 	 */
 	private void drawBranches() {
+		int x = this.getStartX();
+		int y = this.getStartY();
+
+		g2.setStroke(treeStroke); // Reset stroke if needed
+		
+		int yOffSet = (int) (branchHeight * branchOverlap); // Amount each triangle will be offset by
+		for (int i = 0; i < levels; i++) { // For each triangle
+			int yBase = y - yOffSet * i; // Base for the branch triangle
+
+			g2.setColor(Color.decode(branchColor)); // Reset color
+			this.g2.fillPolygon(new int[] {x, x+branchWidth/2, x+branchWidth},
+					new int[] {yBase, yBase-branchHeight, yBase}, 3); // color triangle
+
+			g2.setColor(Color.BLACK);
+			this.g2.drawPolygon(new int[] {x, x+branchWidth/2, x+branchWidth},
+					new int[] {yBase, yBase-branchHeight, yBase}, 3); // outline
+		}
 	}//end of method drawBranches()
 }//end of class Tree
