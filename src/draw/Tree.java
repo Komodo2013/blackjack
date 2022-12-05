@@ -78,6 +78,10 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 	 * @return	void. 
 	 */
 	public void applyScale() {
+		this.branchHeight *= this.getScale();
+		this.branchWidth *= this.getScale();
+		this.trunkHeight *= this.getScale();
+		this.trunkWidth *= this.getScale();
 	}//end of method applyScale()
 	/**
 	 * drawTrunk()
