@@ -10,6 +10,7 @@ import java.awt.RenderingHints;
 import java.awt.Stroke;
 import javax.swing.JPanel;
 import java.awt.geom.*;
+import java.util.ArrayList;
 
 /**
  * Class used to create a DrawPanel where shapes will be drawn by the programmer (via code).
@@ -19,6 +20,8 @@ import java.awt.geom.*;
  * @since 2019-11-26
  * @Minor modifications by Jeff Light
  * @since 2019-12-01
+ * @Minor modifications by Jeff Miguel Espinoza and Jacob Larsen
+ * @since 2022-12-05
  */
 public class DrawPanel extends JPanel {
 	//Attributes
@@ -95,16 +98,19 @@ public class DrawPanel extends JPanel {
 		
 		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
 		t3.draw();
-		
-		
-		//Populate the scene with your own trees here!
 
-		Tree t4 = new Tree(g2, 500, 475, 2, 6, BROWN , DARK_GREEN);
-		t4.draw();
-		Tree t5 = new Tree(g2, 1200, 650, 3, 7, BROWN , GREEN);
-		t5.draw();
-		Tree t6 = new Tree(g2, 125, 650, 1.3, 4, BROWN , FOREST_GREEN);
-		t6.draw();
+		String[] colors = {DARK_GREEN, GRAY, FOREST_GREEN, GREEN, FOREST_GREEN, DARK_GREEN};
+
+		ArrayList<Tree> trees = new ArrayList<>();
+		for (int i = 0; i < 2000; i++) {
+			float xer = (float) Math.random();
+			float yer = (float) Math.random();
+
+			trees.add(new Tree(g2, (int) (xer * (this.getWidth() * 1.1)) - 20, 350 + (int) (yer * this.getHeight()),
+					yer * 2 + 1, (int) (Math.random() * 10),
+					BROWN, colors[(int) (Math.random() * colors.length)]));
+			trees.get(i).draw();
+		}
 
 	}//end of method paintComponent(Graphics)
 

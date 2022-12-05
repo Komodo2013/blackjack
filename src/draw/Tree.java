@@ -19,6 +19,8 @@ import java.awt.Graphics2D;
  * @author Jeffrey L Light
  * @version 1.0
  * @since 2019-11-26
+ * @Minor modifications by Jeff Miguel Espinoza and Jacob Larsen
+ * @since 2022-12-05
  */
 public class Tree extends DrawTreeBaseline.LandscapeObject {
 	//Attributes
