@@ -22,7 +22,7 @@ import java.awt.Graphics2D;
  * @Minor modifications by Jeff Miguel Espinoza and Jacob Larsen
  * @since 2022-12-05
  */
-public class Tree extends DrawTreeBaseline.LandscapeObject {
+public class Tree extends DrawTreeBaseline.LandscapeObject implements Comparable<Tree>{
 	//Attributes
 	private int levels;						//The number of levels (branch triangles) the tree will have.
 	private String trunkColor; 				// The Hex color of the trunk, including the preceding '#'. Set in the constructor.
@@ -128,4 +128,9 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 					new int[] {yBase, yBase-branchHeight, yBase}, 3); // outline
 		}
 	}//end of method drawBranches()
+
+	@Override
+	public int compareTo(Tree o) {
+		return Integer.compare(this.getStartY(), o.getStartY());
+	}
 }//end of class Tree

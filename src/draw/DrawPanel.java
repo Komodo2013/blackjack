@@ -11,6 +11,7 @@ import java.awt.Stroke;
 import javax.swing.JPanel;
 import java.awt.geom.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Class used to create a DrawPanel where shapes will be drawn by the programmer (via code).
@@ -98,19 +99,21 @@ public class DrawPanel extends JPanel {
 		
 		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
 		t3.draw();
-
-		String[] colors = {DARK_GREEN, GRAY, FOREST_GREEN, GREEN, FOREST_GREEN, DARK_GREEN};
+		String[] colors = {DARK_GREEN, GRAY, FOREST_GREEN, GREEN, FOREST_GREEN, DARK_GREEN, "FFB728", "FF3528"};
 
 		ArrayList<Tree> trees = new ArrayList<>();
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i < 700; i++) {
 			float xer = (float) Math.random();
 			float yer = (float) Math.random();
 
 			trees.add(new Tree(g2, (int) (xer * (this.getWidth() * 1.1)) - 20, 350 + (int) (yer * this.getHeight()),
-					yer * 2 + 1, (int) (Math.random() * 10),
+					yer * 2 + 1, 1 + (int) (Math.random() * 7),
 					BROWN, colors[(int) (Math.random() * colors.length)]));
-			trees.get(i).draw();
 		}
+
+		Collections.sort(trees);
+
+		trees.forEach(t -> t.draw());
 
 	}//end of method paintComponent(Graphics)
 
