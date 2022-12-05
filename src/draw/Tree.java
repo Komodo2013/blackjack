@@ -91,7 +91,14 @@ public class Tree extends DrawTreeBaseline.LandscapeObject {
 	 * @return	void. 
 	 */
 	private void drawTrunk() {
-	}//end of method drawTrunk()
+		int x = this.getStartX();
+		int y = this.getStartY();
+		g2.setStroke(treeStroke);
+		g2.setColor(Color.decode(trunkColor));
+		g2.fillRect(x+trunkWidth,y,trunkWidth,trunkHeight);
+		g2.setColor(Color.black);
+		g2.drawRect(x+trunkWidth,y,trunkWidth,trunkHeight);
+	}
 
 	/**
 	 * drawBranches()
