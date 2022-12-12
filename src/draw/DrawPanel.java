@@ -115,6 +115,9 @@ public class DrawPanel extends JPanel {
 
 		trees.forEach(t -> t.draw());
 
+		Snowman snowman = new Snowman(g2,400,300,1,WHITE,DARK_SLATE_GRAY);
+		snowman.draw();
+
 	}//end of method paintComponent(Graphics)
 
 }//end of class DrawPanel
