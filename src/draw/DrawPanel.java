@@ -109,7 +109,8 @@ public class DrawPanel extends JPanel {
 		items.add(new Present(g2, 1000, 620, 1.7, Present.SMALL));
 		items.add(new Present(g2, 1100, 650, 2.1, Present.LARGE));
 
-		items.add(new Snowman(g2,1200,700,1,WHITE,DARK_SLATE_GRAY));
+		items.add(new Snowman(g2,800,500,1,WHITE,DARK_SLATE_GRAY,Snowman.CENTER));
+		items.add(new Snowman(g2,900,500,1,WHITE,DARK_SLATE_GRAY,Snowman.LEFT));
 
 		items.add(new House(g2, 1200, 500, 1.2, House.LOG, House.RECTANGLE));
 		items.add(new House(g2, 1000, 400, 1.1, House.LOG, House.TRIANGLE));

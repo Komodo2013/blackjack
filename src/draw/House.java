@@ -1,3 +1,14 @@
+/**
+ * File: House.java
+ * Description: Creating the House drawing
+ * Lessons Learned: In this lesson I learned how to use switch to draw
+ * Creating a house object with switch
+ * Instructor's Name: Barbara Chamberlin
+ *
+ * @author: Jacob Larsen & Miguel Espinoza.
+ * @since: 12/12/2022.
+ */
+
 package src.draw;
 
 import java.awt.*;
