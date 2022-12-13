@@ -98,7 +98,7 @@ public class DrawPanel extends JPanel {
 			float yer = (float) Math.random();
 
 			items.add(new Tree(g2, (int) (xer * (this.getWidth() * .5)) - 20, 400 + (int) (yer * (this.getHeight()-450)),
-					yer * 2 + 1, 1 + (int) (Math.random() * 7),
+					yer * 2 + 1, 2 + (int) (Math.random() * 7),
 					BROWN, colors[(int) (Math.random() * colors.length)]));
 		}
 
