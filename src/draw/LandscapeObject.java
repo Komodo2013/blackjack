@@ -1,4 +1,6 @@
-package DrawTreeBaseline;
+package src.draw;
+
+import src.draw.Tree;
 
 import java.awt.Graphics2D;
 
@@ -18,7 +20,7 @@ import java.awt.Graphics2D;
  * @version 1.0
  * @since 2019-11-26
  */
-public abstract class LandscapeObject {
+public abstract class LandscapeObject implements Comparable<LandscapeObject>{
 	//Attributes
 	private int startX;			//Starting x coordinate for the object.  This doesn't change once the object has been created.
 	private int startY;			//Starting y coordinate for the object.  This doesn't change once the object has been created.
@@ -92,5 +94,9 @@ public abstract class LandscapeObject {
 	 * @return	void. 
 	 */
 	public abstract void applyScale();
-	
+
+	@Override
+	public int compareTo(LandscapeObject o) {
+		return Integer.compare(this.startY, o.startY);
+	}
 }//end of class LandscapeObject

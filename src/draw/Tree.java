@@ -3,6 +3,7 @@ package src.draw;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.Random;
 
 /**
  * Tree Class.  Extends LandscapObject Class.
@@ -22,19 +23,23 @@ import java.awt.Graphics2D;
  * @Minor modifications by Jeff Miguel Espinoza and Jacob Larsen
  * @since 2022-12-05
  */
-public class Tree extends DrawTreeBaseline.LandscapeObject implements Comparable<Tree>{
+public class Tree extends LandscapeObject{
 	//Attributes
-	private int levels;						//The number of levels (branch triangles) the tree will have.
-	private String trunkColor; 				// The Hex color of the trunk, including the preceding '#'. Set in the constructor.
-	private String branchColor; 			// The Hex color of the branches, including the preceding '#'. Set in the constructor.
-	private int trunkWidth = 10;			//The trunk width in pixels.  Default of 10 for a scale of 1.  Modified by applyScale method().
-	private int trunkHeight = 15;			//The trunk height in pixels.  Default of 15 for a scale of 1.  Modified by applyScale method().
-	private int branchWidth = 30;			//The branch width in pixels.  Default of 30 for a scale of 1.  Modified by applyScale method().
-	private int branchHeight = 30;			//The branch height in pixels.  Default of 30 for a scale of 1.  Modified by applyScale method().
-	private double branchOverlap = .45;		//Indicates how much of each triangle is overlapped by the one above it.
-	private BasicStroke treeStroke = new BasicStroke(1);	//Stroke of 1 pixel use to outline each shape of the tree.
+	protected int levels;						//The number of levels (branch triangles) the tree will have.
+	protected String trunkColor; 				// The Hex color of the trunk, including the preceding '#'. Set in the constructor.
+	protected String branchColor; 			// The Hex color of the branches, including the preceding '#'. Set in the constructor.
+	protected int trunkWidth = 10;			//The trunk width in pixels.  Default of 10 for a scale of 1.  Modified by applyScale method().
+	protected int trunkHeight = 15;			//The trunk height in pixels.  Default of 15 for a scale of 1.  Modified by applyScale method().
+	protected int branchWidth = 30;			//The branch width in pixels.  Default of 30 for a scale of 1.  Modified by applyScale method().
+	protected int branchHeight = 30;			//The branch height in pixels.  Default of 30 for a scale of 1.  Modified by applyScale method().
+	protected double branchOverlap = .45;		//Indicates how much of each triangle is overlapped by the one above it.
+	protected BasicStroke treeStroke = new BasicStroke(1);	//Stroke of 1 pixel use to outline each shape of the tree.
+	protected String type = "regular";
+	Color[] ORNAMENT_COLORS = {Color.RED, Color.ORANGE, Color.YELLOW};
+	public static final String REG = "REG";
+	public static final String DECO = "DECO";
 
-	
+
 	/**
 	 * Primary Constructor.
 	 * Sets all class attributes.
@@ -49,11 +54,22 @@ public class Tree extends DrawTreeBaseline.LandscapeObject implements Comparable
 	 *  
 	 * @return	void
 	 */
-	public Tree(Graphics2D g2, int x, int y, double scale, int levels,  String s_trunkColor, String s_branchColor) {
+	public Tree(Graphics2D g2, int x, int y, double scale, int levels,
+				String s_trunkColor, String s_branchColor, String type) {
 		super(g2, x, y, scale);
 		this.levels = levels;
 		this.trunkColor = "#" + s_trunkColor;
 		this.branchColor = "#" + s_branchColor;
+		this.type = type;
+	}//end of Constructor Tree
+
+	public Tree(Graphics2D g2, int x, int y, double scale, int levels,
+				String s_trunkColor, String s_branchColor) {
+		super(g2, x, y, scale);
+		this.levels = levels;
+		this.trunkColor = "#" + s_trunkColor;
+		this.branchColor = "#" + s_branchColor;
+		this.type = REG;
 	}//end of Constructor Tree
 	
 	
@@ -69,7 +85,10 @@ public class Tree extends DrawTreeBaseline.LandscapeObject implements Comparable
 	public void draw() {
 		applyScale();
 		drawTrunk();
-		drawBranches();
+		switch (type) {
+			case REG -> drawBranches();
+			case DECO -> drawDecoBranches();
+		}
 	}//end of method draw()
 	
 	/**
@@ -102,35 +121,80 @@ public class Tree extends DrawTreeBaseline.LandscapeObject implements Comparable
 		g2.drawRect(x+trunkWidth,y,trunkWidth,trunkHeight);
 	}
 
-	/**
-	 * drawBranches()
-	 * Draws 'level' number of triangles above the trunk overlapped by 'branchOverlap'.
-	 * Called by draw()
-	 * 
-	 * @return	void. 
-	 */
-	private void drawBranches() {
+	protected void drawDecoBranches() {
 		int x = this.getStartX();
 		int y = this.getStartY();
 
 		g2.setStroke(treeStroke); // Reset stroke if needed
-		
-		int yOffSet = (int) (branchHeight * branchOverlap); // Amount each triangle will be offset by
+
+		int yOffSet = 0; // Amount each triangle will be offset by
+		int startX = branchWidth;
+
 		for (int i = 0; i < levels; i++) { // For each triangle
-			int yBase = y - yOffSet * i; // Base for the branch triangle
+			int xoff = (startX - branchWidth) / 2;
+			int yBase = y - yOffSet; // Base for the branch triangle
+
+			g2.setStroke(new BasicStroke(1));
 
 			g2.setColor(Color.decode(branchColor)); // Reset color
-			this.g2.fillPolygon(new int[] {x, x+branchWidth/2, x+branchWidth},
+			this.g2.fillPolygon(new int[]{x + xoff, x + xoff + branchWidth / 2, x + branchWidth + xoff},
+					new int[]{yBase, yBase - branchHeight, yBase}, 3); // color triangle
+
+			g2.setColor(Color.BLACK);
+			this.g2.drawPolygon(new int[]{x + xoff, x + xoff + branchWidth / 2, x + branchWidth + xoff},
+					new int[]{yBase, yBase - branchHeight, yBase}, 3); // outline
+
+			g2.setStroke(new BasicStroke((int) (2 * getScale())));
+			// Draw ornaments
+			Random r = new Random();
+			for (int j = 0; j < r.nextInt(2, Math.max(Math.min((int) (branchWidth * branchHeight / 30), 5), 3)); j++) {
+				g2.setColor(ORNAMENT_COLORS[r.nextInt(0, ORNAMENT_COLORS.length)]);
+				var _x = r.nextInt(0, branchWidth);
+				var _y = r.nextInt(0, branchHeight);
+				//System.out.printf("%d\t%d\t\t%d\t%d\n", Math.abs(_x - branchWidth/2), _y, branchWidth, branchHeight);
+				if (Math.abs(_x - branchWidth / 2) < (branchHeight - _y) * branchWidth / (branchHeight * 2)) {
+					//System.out.println("drawn");
+					g2.drawOval(_x + x + xoff, yBase - _y, (int) (2 * getScale()), (int) (2 * getScale()));
+				}
+			}
+
+			yOffSet += (int) (branchHeight * branchOverlap); // update offset
+			this.branchWidth *= .8;
+			this.branchHeight *= .8;
+		}
+	}
+
+	/**
+	 * drawBranches()
+	 * Draws 'level' number of triangles above the trunk overlapped by 'branchOverlap'.
+	 * Called by draw()
+	 *
+	 * @return	void.
+	 */
+	protected void drawBranches() {
+		int x = this.getStartX();
+		int y = this.getStartY();
+
+		g2.setStroke(treeStroke); // Reset stroke if needed
+
+		int yOffSet = 0; // Amount each triangle will be offset by
+		int startX = branchWidth;
+
+		for (int i = 0; i < levels; i++) { // For each triangle
+			int xoff = (startX - branchWidth)/2;
+			int yBase = y - yOffSet; // Base for the branch triangle
+
+			g2.setColor(Color.decode(branchColor)); // Reset color
+			this.g2.fillPolygon(new int[] {x+xoff, x+xoff+branchWidth/2, x+branchWidth+xoff},
 					new int[] {yBase, yBase-branchHeight, yBase}, 3); // color triangle
 
 			g2.setColor(Color.BLACK);
-			this.g2.drawPolygon(new int[] {x, x+branchWidth/2, x+branchWidth},
+			this.g2.drawPolygon(new int[] {x+xoff, x+xoff+branchWidth/2, x+branchWidth+xoff},
 					new int[] {yBase, yBase-branchHeight, yBase}, 3); // outline
-		}
-	}//end of method drawBranches()
 
-	@Override
-	public int compareTo(Tree o) {
-		return Integer.compare(this.getStartY(), o.getStartY());
-	}
+			yOffSet += (int) (branchHeight * branchOverlap); // update offset
+			this.branchWidth *= .8;
+			this.branchHeight *= .8;
+			}
+	}//end of method drawBranches()
 }//end of class Tree

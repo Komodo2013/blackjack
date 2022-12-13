@@ -89,34 +89,36 @@ public class DrawPanel extends JPanel {
 		
 		g2.setColor(Color.decode("#" + LAWN_GREEN));
 		g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
-		
-		//DrawTree Trees
-		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
-		t1.draw();
-		
-		Tree t2 = new Tree(g2, 200, 375, 1, 5, BROWN , GRAY);
-		t2.draw();
-		
-		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
-		t3.draw();
-		String[] colors = {DARK_GREEN, GRAY, FOREST_GREEN, GREEN, FOREST_GREEN, DARK_GREEN, "FFB728", "FF3528"};
 
-		ArrayList<Tree> trees = new ArrayList<>();
-		for (int i = 0; i < 700; i++) {
+		String[] colors = {DARK_GREEN, GRAY, FOREST_GREEN, GREEN, FOREST_GREEN, DARK_GREEN, WHITE_SMOKE};
+
+		ArrayList<LandscapeObject> items = new ArrayList<>();
+		for (int i = 0; i < 100; i++) {
 			float xer = (float) Math.random();
 			float yer = (float) Math.random();
 
-			trees.add(new Tree(g2, (int) (xer * (this.getWidth() * 1.1)) - 20, 350 + (int) (yer * this.getHeight()),
+			items.add(new Tree(g2, (int) (xer * (this.getWidth() * .5)) - 20, 400 + (int) (yer * (this.getHeight()-450)),
 					yer * 2 + 1, 1 + (int) (Math.random() * 7),
 					BROWN, colors[(int) (Math.random() * colors.length)]));
 		}
 
-		Collections.sort(trees);
+		items.add(new Tree(g2, 1000, 600, 3, 3, BROWN, FOREST_GREEN, Tree.DECO));
 
-		trees.forEach(t -> t.draw());
+		items.add(new Present(g2, 1050, 610, 2.3, Present.LARGE));
+		items.add(new Present(g2, 1120, 610, 2, Present.REG));
+		items.add(new Present(g2, 1000, 620, 1.7, Present.SMALL));
+		items.add(new Present(g2, 1100, 650, 2.1, Present.LARGE));
 
-		Snowman snowman = new Snowman(g2,400,300,1,WHITE,DARK_SLATE_GRAY);
-		snowman.draw();
+		items.add(new Snowman(g2,1200,700,1,WHITE,DARK_SLATE_GRAY));
+
+		items.add(new House(g2, 1200, 500, 1.2, House.LOG, House.RECTANGLE));
+		items.add(new House(g2, 1000, 400, 1.1, House.LOG, House.TRIANGLE));
+		items.add(new House(g2, 1250, 350, 1, House.PLASTER, House.RECTANGLE));
+		items.add(new House(g2, 1300, 600, 1.4, House.PLASTER, House.TRIANGLE));
+
+		Collections.sort(items);
+		items.forEach(LandscapeObject::draw);
+
 
 	}//end of method paintComponent(Graphics)
 

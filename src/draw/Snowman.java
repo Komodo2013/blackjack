@@ -2,7 +2,7 @@ package src.draw;
 
 import java.awt.*;
 
-public class Snowman extends DrawTreeBaseline.LandscapeObject {
+public class Snowman extends LandscapeObject {
 
     private int MID = 250;
 
