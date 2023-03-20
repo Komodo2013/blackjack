@@ -34,26 +34,26 @@ public class PlayBlackJack {
         DeckTest.run(deck);*/
 
 
-        /*BlackJackHand hand = new BlackJackHand();
+        BlackJackHand hand = new BlackJackHand();
         BlackJackDeck deck1 = new BlackJackDeck();
         deck1.shuffle();
-        HandTest.run(deck1,hand);*/
+        HandTest.run(deck1,hand);
 
-        PGame.setBackgroundColor(new Color(0, 138, 47));
-        PGame.setBannerColor(new Color(64, 64, 64));
-        PGame.setBannerTextColor(new Color(252, 252, 252));
-        PGame.setButtonColor(new Color(192, 192, 192));
-        PGame.setButtonTextColor(new Color(2, 2, 2));
-        PGame.setButtonHighlightColor(new Color(253, 0, 8));
-        PGame.setFont("Times New Roman");
-
-        BlackJackDeck deck2 = new BlackJackDeck();
-
-        BlackJackHand Dealer = new BlackJackHand();
-        //Dealer.getCard(0).hideCard();
-        BlackJackHand Player = new BlackJackHand();
-
-        PGame.run(deck2, Dealer, Player);
+//        PGame.setBackgroundColor(new Color(0, 138, 47));
+//        PGame.setBannerColor(new Color(64, 64, 64));
+//        PGame.setBannerTextColor(new Color(252, 252, 252));
+//        PGame.setButtonColor(new Color(192, 192, 192));
+//        PGame.setButtonTextColor(new Color(2, 2, 2));
+//        PGame.setButtonHighlightColor(new Color(253, 0, 8));
+//        PGame.setFont("Times New Roman");
+//
+//        BlackJackDeck deck2 = new BlackJackDeck();
+//
+//        BlackJackHand Dealer = new BlackJackHand();
+//        //Dealer.getCard(0).hideCard();
+//        BlackJackHand Player = new BlackJackHand();
+//
+//        PGame.run(deck2, Dealer, Player);
 
     }
 }

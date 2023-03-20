@@ -177,10 +177,11 @@ public class ShoppingPlan extends ToDo {
 	 *
 	 * @return	String that represents the Shopping Plan in a readable format.
 	 */
+	@Override
 	public String toString() {
 		String text = "";
 		text = text + "\n--------------------------------------\n";
-		text = text + String.format("%-25s%s\n",this.getTitle(), this.shoppingType);
+		text = text + String.format("%-25s%s\n",getTitle(), this.getShoppingType());
 		text = text + "--------------------------------------\n";		
 		for(String item : items.keySet()) {
 			text = text + String.format("  %-20s%8d\n",item, this.getAmount(item)); 
